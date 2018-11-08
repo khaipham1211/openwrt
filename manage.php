@@ -17,9 +17,18 @@
 </style>
 </head>
 <body>
-<div id="xxx">
-				
-</div>			
+<div class="alert alert-success text-center">
+  <strong>Hệ Thống Quản Lý ROUTERS tập trung</strong>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div id="xxx">			
+</div>
+    </div>
+  </div>
+</div>
+			
 <script>
 (function($)
 {

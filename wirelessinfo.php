@@ -9,7 +9,7 @@ $ch1 = curl_init($url1);
  
 //The JSON data.
 $jsonData1 = array(
- "params"=> ["iwinfo wlan0 assoclist  | grep 'SNR' | awk '{print $1}'"],
+ "params"=> [" ifconfig | head -2 | grep 'inet'"],
  "jsonrpc"=> "2.0",
  "id"=> 1,
  "method"=> "exec"
@@ -35,21 +35,6 @@ $results1 = curl_exec($ch1);
 curl_close($ch1);
 $result_arr1 = json_decode($results1, true);
 $second1 = array_slice($result_arr1, 2, 1);
-$mac = implode(" ",$second1);
-//echo $mac;
-for($z=0 ; $z <= strlen($mac) ; $z++){
-	$data[$z] = substr($mac,0,18);
-	$mac = substr($mac,18,strlen($mac));
-}
-$banmac = substr($mac,0,17);
-$_SESSION['banmac'] = $banmac;
-
-//echo count($data);
-//echo $_SESSION['banmac'];
-for ($i = 0 ; $i < count($data) ;  $i++ ) {
-	echo "<tr>
-		<td >Mac address</td>
-		<td class= 'col-sm-8'>$data[$i]</td>
-	</tr>	";
-					}
+$info = implode(" ",$second1);
+echo $info;
 ?>

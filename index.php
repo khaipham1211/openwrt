@@ -29,7 +29,6 @@
 			  <li><a id="reboot" onclick="myFunction()" style = "cursor:pointer;">reboot</a></li>
 			  <li><a data-toggle="modal" data-target="#myModal" style = "cursor:pointer;">config</a></li>
 			  <li><a href="balance.php">balance</a></li>
-			  <li><a href="getroute.php">Router list</a></li>
 			</ul>
 		  </div>
 		</nav>
@@ -49,14 +48,6 @@
 				  <div class="form-group">
 					<label>Ip</label>
 					<input type="text" class="form-control" placeholder="vd:192.168.10.10"  name="ipchange">
-				  </div>
-				  <div class="form-group">
-					<label for="pwd">Netmask</label>
-					<input type="password" class="form-control" id="pwd">
-				  </div>
-				  <div class="form-group">
-					<label for="pwd">Gateway</label>
-					<input type="password" class="form-control" id="pwd">
 				  </div>
 				  <button type="submit" class="btn btn-default">Submit</button>
 				</form>
@@ -157,12 +148,7 @@
 						</thead>
 						<tbody>
 						  <tr>
-							<td>IP</td>
-							<td>Doesdsfdsfdsfdsfdsfdsfdsfssdfdsfsdfdsdssdf</td>
-						  </tr>
-						  <tr>
-							<td>Gateway</td>
-							<td>Moe</td>
+							<td id="info"></td>
 						  </tr>
 						</tbody>
 					</table>
@@ -173,11 +159,8 @@
 							<th class= "col-sm-9"></div></th>
 						  </tr>
 						</thead>
-						<tbody>
-						  <tr>
-							<td >Hostname</td>
-							<td class= "col-sm-8"><div id="client"></td>
-						  </tr>						
+						<tbody id="client">
+						  					
 						</tbody>
 					</table>
 				</div>
@@ -199,6 +182,8 @@
         $container1.load("getver.php");
 		var $container2 = $("#kennel");
         $container2.load("getkennen.php");
+        var $container7 = $("#info");
+        $container7.load("wirelessinfo.php");
 		var $container3 = $("#uptime");
 		//alert($container6);
         $container3.load("gettime.php");

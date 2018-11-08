@@ -6,27 +6,16 @@
 		die ('Câu truy vấn bị sai');
 	}
 	$i = 0;
-	echo "<TABLE>";
-	echo "<tr>
-		  <td>IP</td>
-	      <td>NAME</td>
-	      <td>DESCRIPTION</td>
-	      </tr>";
+
 	while ($row = mysqli_fetch_array($result)){
-		echo "<TR>";
-		echo "<TD>".$row['iprouter']."</TD>";
-		echo "<TD>".$row['tenrouter']."</TD>";
-		echo "<TD>".$row['description']."</TD>";
-		echo "</TR>";
+		
 		$ip[$i] = $row['iprouter'];
 		$i++;		
 	}
 	for ( $j=0 ; $j<$i; $j++){
 		
 		$token[$j] = Postjson($ip[$j]);
-		echo $token[$j];
 		$cpu[$j] = Getcpu($ip[$j],$token[$j]);
-		echo $cpu[$j];
 	}
         function Postjson($ip) {
             $url = "http://$ip/cgi-bin/luci/rpc/auth";
@@ -82,15 +71,17 @@
 				<table class="table">
 					<thead>
 					  <tr>
-						<th class= "col-sm-3">Performance</th>
-						<th class= "col-sm-9"></th>
+						<th class= "col-sm-4">Performance</th>
+						<th class= "col-sm-4"></th>
+						<th class= "col-sm-4"></th>
+
 					  </tr>
 					</thead>
 					<tbody>
 					<?php
 					for ($j = 0 ; $j < $i ;  $j++ ) {
 					  echo "<tr>
-						<td>CPU1</td>
+						<td>CPU $j</td>
 						<td>
 							<div class='progress' style = 'width:150px;height:20px;background-color:white;border:solid 1px;'>
 								<div id = 'progresscpu' class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='70' aria-valuemin='0' aria-valuemax='100' style='width:$cpu[$j]'>$cpu[$j].</div>
@@ -98,7 +89,7 @@
 						</td>
 						<td>
 							<form action='setip.php' method='post'>
-								<input type='submit' name='ip' value='$ip[$j]' style='background:none; border:solid 1px; border-radius:3px; width:110px;' />
+								<input type='submit' name='ip' value='$ip[$j]' style='background:none; border:solid 1px; border-radius:3px; width:150px;' />
 							</form>
 						</td>
 					  </tr>";
