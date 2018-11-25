@@ -37,7 +37,7 @@ curl_close($ch1);
 $result_arr1 = json_decode($results1, true);
 
 $second1 = array_slice($result_arr1, 2, 1);
-$cpu = implode(" ",$second1);
+$cpu = trim(implode(" ",$second1));
 echo $cpu;
  
 

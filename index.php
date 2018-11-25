@@ -27,8 +27,7 @@
 			<ul class="nav navbar-nav" >
 			  <li><a href="#">Status</a></li>
 			  <li><a id="reboot" onclick="myFunction()" style = "cursor:pointer;">reboot</a></li>
-			  <li><a data-toggle="modal" data-target="#myModal" style = "cursor:pointer;">config</a></li>
-			  <li><a href="balance.php">balance</a></li>
+			  <!-- <li><a data-toggle="modal" data-target="#myModal" style = "cursor:pointer;">config</a></li> -->
 			</ul>
 		  </div>
 		</nav>
@@ -126,19 +125,11 @@
 							</div>
 						</td>
 					  </tr>
-					  <tr>
-						<td>RAM</td>
-						<td>
-							<div class="progress" style = "width:150px;height:20px;background-color:white;border:solid 1px;">
-								<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
-							</div>
-						</td>
-					  </tr>
 					</tbody>
 				</table>
 				</div>
 				<div id="menu1" class="tab-pane fade">
-					<h4><strong>Wireless</strong></h4>
+					<h4><strong>Wireless</strong></h4><a href="turnoffwf.php">turn off</a><a href="turnonwf.php">turn on</a>
 					<table class="table">
 						<thead >
 						  <tr>
@@ -232,17 +223,8 @@ function myFunction() {
 	setInterval(function()
         {
             a = document.getElementById("progresscpu").innerHTML;
+            a = a+"%";
 			document.getElementById("progresscpu").style.width = a;
-			a = a.substr(0,3);
-			if(a >80 ){
-				count = count+1;
-			}
-			else
-				count = 0;
-			//alert(count);
-			if(count==10){
-				window.location="xxx.php";
-			}
         }, 1800);
 	
 </script>
