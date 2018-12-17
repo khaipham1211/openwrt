@@ -157,7 +157,7 @@
 
                   <div class="col-md-12 col-sm-12 col-xs-6">
                     <div>
-                      <p>Tplink841</p>
+                      <p>Tplink740</p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
                           <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="100"></div>
@@ -165,7 +165,7 @@
                       </div>
                     </div>
                     <div>
-                      <p>Tplink740</p>
+                      <p>Tplink841</p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
                           <div class="progress-bar bg-purple" role="progressbar" data-transitiongoal="100"></div>
